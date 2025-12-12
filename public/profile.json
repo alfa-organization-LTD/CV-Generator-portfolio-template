@@ -1,0 +1,10 @@
+{
+  "user_id": "uuid-from-supabase",
+  "site_name": "john-portfolio",
+  "supabase_url": "https://your-supabase-url.supabase.co",
+  "supabase_anon_key": "your-supabase-anon-key",
+  "theme": "dark",
+  "logo_url": "https://example.com/logo.png",
+  "hero_image_url": "https://example.com/hero-image.jpg",
+  "published_at": "2025-10-18T15:00:00Z"
+}
