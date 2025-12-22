@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import { ReactNode, useLayoutEffect, useEffect } from "react";
+import { ReactNode, useLayoutEffect, useEffect, useState } from "react";
 import HomePage from "./pages/HomePage";
 import About from "./pages/About";
 import Header from "./components/Header";
@@ -14,8 +14,7 @@ type ProfileJson = {
   logos?: string[]; // any other public config you want embedded
 };
 
-const [profileJson, setProfileJson] = useState<ProfileJson | null>(null);
-const [portfolio, setPortfolio] = useState<any>(null);
+
 
 
 
@@ -32,6 +31,9 @@ const ScrollToTop = ({ children }: { children: ReactNode }) => {
 };
 
 export default function App() {
+  const [profileJson, setProfileJson] = useState<ProfileJson | null>(null);
+  const [portfolio, setPortfolio] = useState<any>(null);
+
   useEffect(() => {
     async function bootstrap() {
       const res = await fetch("/profile.json");
