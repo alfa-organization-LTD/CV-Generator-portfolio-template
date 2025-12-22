@@ -1,78 +1,19 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import type { Education, Experience } from "../types/profile";
 
-const experiences = [
-  {
-    title: "Freelancer – Web Developer",
-    company: "Freelancer",
-    period: "05/2022 – present",
-    highlights: [
-      "Founded 80% of Chattok Gaming web app using Nuxt.js & Supabase",
-      "Reduced login errors by 30% by using Supabase Auth",
-      "Created Economic Youth Web App used by 100+ students"
-    ]
-  },
-  {
-    title: "Web Developer at PACTEL",
-    company: "PACTEL",
-    period: "01/2021 – present",
-    highlights: [
-      "Improved performance 90% on pactel.site",
-      "Integrated APIs improving efficiency by 20%",
-      "Built MiddleEast landing page increasing traffic by 50%",
-      "Developed Pactel Courses with Vue & Tailwind, boosting enrollments by 40%"
-    ]
-  },
-  // {
-  //   title: "Pactel Official Website",
-  //   period: "02/2025",
-  //   highlights: [
-  //     "Used React.js, Swiper, TailwindCSS, and Brevo CRM",
-  //     "Improved UI/UX, brand presence and CRM integration"
-  //   ]
-  // },
-  // {
-  //   title: "Movies App",
-  //   period: "03/2025",
-  //   highlights: [
-  //     "Full-stack app with React, Supabase, MUI, TMDB API",
-  //     "Auth with Email, OAuth, OTP, 2FA",
-  //     "Netflix-style responsive UI with protected routes"
-  //   ]
-  // },
-  // {
-  //   title: "E-commerce Store App",
-  //   period: "04/2025",
-  //   highlights: [
-  //     "React + Ant Design UI with JWT, Zustand for state",
-  //     "Includes Admin Dashboard and secure checkout",
-  //     "Optimized performance and UX for mobile/desktop"
-  //   ]
-  // },
-  // {
-  //   title: "Live Interactive Games App",
-  //   period: "08/2024",
-  //   highlights: [
-  //     "Nuxt, Supabase, Vuetify & Tailwind for TikTok live games",
-  //     "Multi-language real-time gameplay with SSR"
-  //   ]
-  // },
-  // {
-  //   title: "Online Courses and Portfolio App",
-  //   period: "07/2024",
-  //   highlights: [
-  //     "Unified educational + portfolio app",
-  //     "Nuxt, Vuetify, Supabase, Tailwind stack",
-  //     "Focused on intuitive navigation and scalability"
-  //   ]
-  // }
-];
-
+interface EduExpProps {
+  myEdu?: Education[];
+  myExp?: Experience[];
+}
 
 // This component displays the education and experience sections of a resume
 // It allows users to toggle between the two sections using buttons
-const EduExp = () => {
+const EduExp: React.FC<EduExpProps> = ({ myEdu, myExp }) => {
   const [activeTab, setActiveTab] = useState("education");
+
+  const education = myEdu?? [];
+  const experiences = myExp ?? [];
 
   return (
     <div className="max-w-5xl mx-auto py-12 px-4">
@@ -80,8 +21,8 @@ const EduExp = () => {
         <button
           className={`px-4 py-2 rounded-full font-semibold transition-all ${
             activeTab === "education"
-              ? "bg-[#FF2E63]/80 text-white"
-              : "bg-[#1A1A1D] text-[#EAEAEA] border border-[#08D9D6]"
+              ? "bg-[var(--primary)]/80 text-[var(--text)]"
+              : "bg-[var(--surface)] text-[var(--text)] border border-[var(--border)]"
           }`}
           onClick={() => setActiveTab("education")}
         >
@@ -90,8 +31,8 @@ const EduExp = () => {
         <button
           className={`px-4 py-2 rounded-full font-semibold transition-all ${
             activeTab === "experience"
-              ? "bg-[#FF2E63]/80 text-white"
-              : "bg-[#1A1A1D] text-[#EAEAEA] border border-[#08D9D6]"
+              ? "bg-[var(--primary)]/80 text-[var(--text)]"
+              : "bg-[var(--surface)] text-[var(--text)] border border-[var(--border)]"
           }`}
           onClick={() => setActiveTab("experience")}
         >
@@ -111,18 +52,16 @@ const EduExp = () => {
             <div className="space-y-8">
               <div className="flex flex-col md:flex-row items-start md:items-center">
                 <div className="flex items-center space-x-4">
-                  <div className="w-2 h-10 bg-[#FF2E63]/60"></div>
-                  <p className="text-lg md:text-xl me-6 text-[#B6B6B6]">09/2021 – 2025</p>
+                  <div className="w-2 h-10 bg-[var(--primary)]/60"></div>
+                  <p className="text-lg md:text-xl me-6 text-[var(--text-muted)]">{education[0]?.startDate} – {education[0]?.endDate}</p>
                 </div>
                 <div className="md:ml-10 mt-4 md:mt-0">
-                  <h2 className="text-2xl md:text-3xl font-semibold text-[#FF2E63]/90">
-                    B.Sc. Computer Science
+                  <h2 className="text-2xl md:text-3xl font-semibold text-[var(--primary)]/90">
+                    {education[0]?.degree}
                   </h2>
-                  <p className="text-xl font-light text-[#08D9D6]">Helwan University – Egypt</p>
-                  <ul className="list-disc ml-5 mt-4 text-md text-[#B6B6B6] space-y-1">
-                    <li>Bachelor of Science in Computer science & Mathematics</li>
-                    <li>Graduation Project: AI-Powered GANs Super resolution model</li>
-                    <li>Key Courses: Data Structures, DBMS, Software Engineering</li>
+                  <p className="text-xl font-light text-[var(--text)]">{education[0]?.institution}</p>
+                  <ul className="list-disc ml-5 mt-4 text-md text-[var(--text-muted)] space-y-1">
+                    {education[0]?.description}
                   </ul>
                 </div>
               </div>
@@ -137,20 +76,18 @@ const EduExp = () => {
                   className="flex flex-col md:flex-row items-start md:items-center"
                 >
                   <div className="flex items-center space-x-4">
-                    <div className="w-2 h-10 bg-[#FF2E63]/60"></div>
-                    <p className="text-lg md:text-xl min-w-[10rem] text-[#B6B6B6]">{exp.period}</p>
+                    <div className="w-2 h-10 bg-[var(--primary)]/60"></div>
+                    <p className="text-lg md:text-xl min-w-[10rem] text-[var(--text-muted)]">{exp.startDate} - {exp.endDate}</p>
                   </div>
                   <div className="md:ml-10 mt-4 md:mt-0">
-                    <h2 className="text-2xl md:text-3xl font-semibold text-[#FF2E63]/90">
-                      {exp.title}
+                    <h2 className="text-2xl md:text-3xl font-semibold text-[var(--primary)]/90">
+                      {exp.position}
                     </h2>
                     {exp.company && (
-                      <p className="text-xl font-light text-[#08D9D6]">{exp.company}</p>
+                      <p className="text-xl font-light text-[var(--text)]">{exp.company}</p>
                     )}
-                    <ul className="list-disc ml-5 mt-4 text-md text-[#B6B6B6] space-y-1">
-                      {exp.highlights.map((point, i) => (
-                        <li key={i}>{point}</li>
-                      ))}
+                    <ul className="list-disc ml-5 mt-4 text-md text-[var(--text-muted)] space-y-1">
+                      {exp.description}
                     </ul>
                   </div>
                 </div>

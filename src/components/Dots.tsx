@@ -40,13 +40,13 @@ export default function Dots() {
       ref={ref}
     >
       <div
-        className={`w-1 ${line1Height} bg-[#B6B6B6] transition-all duration-1000 ease-out`}
+        className={`w-1 ${line1Height} bg-[var(--border)] transition-all duration-1000 ease-out`}
       />
       <div
-        className={`w-5 h-5 rounded-full ${round2Opacity} bg-[#08D9D6] transition-opacity duration-500 ease-out my-2`}
+        className={`w-5 h-5 rounded-full ${round2Opacity} bg-[var(--primary)] transition-opacity duration-500 ease-out my-2`}
       />
       <div
-        className={`w-1 ${line2Height} bg-[#B6B6B6] transition-all duration-1000 ease-out`}
+        className={`w-1 ${line2Height} bg-[var(--border)] transition-all duration-1000 ease-out`}
       />
     </div>
   );

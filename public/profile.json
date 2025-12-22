@@ -1,10 +1,117 @@
 {
-  "user_id": "uuid-from-supabase",
+  "user_id": "562adbc5-0b6d-4e2f-b132-ed5d5ee6b2e4",
   "site_name": "john-portfolio",
-  "supabase_url": "https://your-supabase-url.supabase.co",
-  "supabase_anon_key": "your-supabase-anon-key",
-  "theme": "dark",
-  "logo_url": "https://example.com/logo.png",
-  "hero_image_url": "https://example.com/hero-image.jpg",
+  "theme": {
+    "mode": "dark",
+  "colors": {
+    "background": "#0A0A0A",
+    "surface": "#161616",
+    "primary": "#FFFFFF",
+    "primary_soft": "#D4D4D4",
+    "accent": "#A3A3A3",
+    "text": "#F5F5F5",
+    "text_muted": "#A1A1A1",
+    "border": "#262626"
+  }
+  },
+  "logo_url": "https://asyetaaelgjbulaorbij.supabase.co/storage/v1/object/public/avatars/562adbc5-0b6d-4e2f-b132-ed5d5ee6b2e4/profile/avatar-1759683065483.png",
+  "logo_inverted": true,
+  "Hero": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "hero_image_url": "https://asyetaaelgjbulaorbij.supabase.co/storage/v1/object/public/avatars/562adbc5-0b6d-4e2f-b132-ed5d5ee6b2e4/profile/avatar-1759683065483.png",
+    "hero_image_cover": false,
+    "bio": "Full Stack Developer based in San Francisco.",
+    "phone": "+1234567890",
+    "email": "john.doe@example.com",
+    "cvLink": "https://example.com/john-doe-cv.pdf",
+    "description": "Passionate developer with experience in building web applications using modern technologies."
+  },
+  "socialLinks": {
+    "github": "https://github.com/johndoe",
+    "linkedin": "https://linkedin.com/in/johndoe"
+  },
+  "services": [
+    {
+      "title": "Web Development2",
+      "description": "Building responsive and modern web applications.",
+      "link": "https://example.com/web-development"
+    },
+    {
+      "title": "Mobile App Development2",
+      "description": "Creating cross-platform mobile applications.",
+      "link": "https://example.com/mobile-app-development"
+    }
+  ],
+  "skills": [
+    {
+      "name": "JavaScript",
+      "level": "Expert"
+    },
+    {
+      "name": "React",
+      "level": "Advanced"
+    },
+    {
+      "name": "Node.js",
+      "level": "Advanced"
+    },
+    {
+      "name": "CSS",
+      "level": "Intermediate"
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Technology",
+      "location": "Cityville",
+      "degree": "B.Sc. in Computer Science",
+      "startDate": "2015-09-01",
+      "endDate": "2019-06-30",
+      "description": "Graduated with honors, focusing on software development and algorithms."
+    }
+  ],
+  "experience": [
+    {
+      "company": "Tech Solutions Inc.",
+      "position": "Frontend Developer",
+      "startDate": "2019-07-01",
+      "endDate": "2021-12-31",
+      "description": "Developed and maintained the front end of the company's main product using React and Redux."
+    },
+    {
+      "company": "Innovatech LLC",
+      "position": "Full Stack Developer",
+      "startDate": "2022-01-01",
+      "endDate": "Present",
+      "description": "Working on building scalable web applications using Node.js, Express, and MongoDB."
+    }
+  ],
+  "milestone": [
+    {
+      "customers_served": 150,
+      "projects_completed": 45,
+      "experience_years": 5
+    }
+  ],
+  "projects": [
+    {
+      "title": "Project Alpha",
+      "cover": "https://asyetaaelgjbulaorbij.supabase.co/storage/v1/object/public/avatars/562adbc5-0b6d-4e2f-b132-ed5d5ee6b2e4/profile/avatar-1759683065483.png",
+      "description": "A web application for managing tasks and projects.",
+      "link": "https://example.com/project-alpha",
+      "code": "https://example.com/project-alpha-code",
+      "type": "react"
+    },
+    {
+      "title": "Project Beta",
+      "cover": "https://asyetaaelgjbulaorbij.supabase.co/storage/v1/object/public/avatars/562adbc5-0b6d-4e2f-b132-ed5d5ee6b2e4/profile/avatar-1759683065483.png",
+      "description": "A mobile app for tracking fitness activities.",
+      "link": "https://example.com/project-beta",
+      "code": "https://example.com/project-beta-code",
+      "type": "vue"
+    }
+  ],
+
   "published_at": "2025-10-18T15:00:00Z"
 }

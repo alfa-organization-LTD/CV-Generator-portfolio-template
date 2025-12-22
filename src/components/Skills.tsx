@@ -1,36 +1,27 @@
-import React, { JSX } from 'react';
+import React from 'react';
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 
 // Define the types
 interface Skill {
   name: string;
-  icon: string;
-  progress: string;
-};
+  icon?: string;   
+  progress?: string; 
+}
+
+interface SkillsProps {
+  skills?: Skill[];
+}
 
 // skills component
 // This component displays a list of skills.
 // It uses the Intersection Observer API to trigger animations when the component comes into view.
 // The skills are displayed in a grid layout, and each skill card has a hover effect.
-export default function Skills(): JSX.Element {
+const Skills: React.FC<SkillsProps> = ({ skills }) => {
   const { ref: skillsRef, inView: sightInView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
-  const skills: Skill[] = [
-    { name: 'HTML', icon: '/html.svg', progress: 'w-80' },
-    { name: 'CSS', icon: '/css.svg', progress: 'w-75' },
-    { name: 'JavaScript', icon: '/js.svg', progress: 'w-85' },
-    { name: 'React', icon: '/react.svg', progress: 'w-90' },
-    { name: 'Vue', icon: '/vue.svg', progress: 'w-70' },
-    { name: 'TypeScript', icon: '/ts.svg', progress: 'w-80' },
-    { name: 'GitHub', icon: '/github.svg', progress: 'w-95' },
-    { name: 'Tailwind', icon: '/tailwind.svg', progress: 'w-85' },
-    { name: 'Restful API', icon: '/api.svg', progress: 'w-75' },
-    { name: 'MUI', icon: '/vuetify.svg', progress: 'w-65' },
-    { name: 'Nuxt.js', icon: '/nuxt.svg', progress: 'w-70' },
-    { name: 'Axios', icon: '/axios.svg', progress: 'w-60' },
-  ];
-
+  const skillList = skills ?? [];
+  
   return (
     <motion.div
             ref={skillsRef}
@@ -40,27 +31,18 @@ export default function Skills(): JSX.Element {
           >
     <div
       id="skills"
-      className="text-[#EAEAEA] mt-20 w-full md:max-w-[80rem] 2xl:max-w-[96rem] mx-auto px-4a md:px-0 transition-opacity duration-1000"
+      className="text-[var(--text)] mt-20 w-full md:max-w-[80rem] 2xl:max-w-[96rem] mx-auto px-4a md:px-0 transition-opacity duration-1000"
     >
       <div className="text-center space-y-8">
-        <h1 className="text-5xl lg:text-7xl font-bold text-[#FF2E63]">My Skills</h1>
-
-        {/* <a
-          className="inline-flex items-center gap-3 bg-[#08D9D6] text-[#121212] px-5 py-2 rounded-xl font-semibold hover:scale-105 transition-transform duration-300 w-fit mx-auto"
-          href="https://drive.google.com/file/d/1j6OQEoC0okTvrxOMFlLGRcM1OsfC2UDH/view?usp=sharing&export=download"
-          download
-        >
-          <span>Download CV</span>
-          <img src="/cv.svg" width="32" height="32" alt="CV" />
-        </a> */}
+        <h1 className="text-5xl lg:text-7xl font-bold text-[var(--primary)]">My Skills</h1>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8 md:gap-10 mt-12">
-        {skills.map((skill, index) => (
+      <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-${skillList.length} lg:grid-cols-${skillList.length} xl:grid-cols-${skillList.length} gap-8 md:gap-10 mt-12`}>
+        {skillList.map((skill, index) => (
           <div
             key={index}
-            className="bg-[#1A1A1D] rounded-xl p-5 text-center my-auto min-h-[10.8rem] shadow-lg hover:scale-105 transform transition duration-300"
+            className="bg-[var(--surface)] rounded-xl p-5 text-center my-auto min-h-[10.8rem]a shadow-lg hover:scale-105 transform transition duration-300"
           >
-            <img
+            {/* <img
               src={skill.icon}
               className={`mx-auto mb-4 
                 ${skill.name === 'Restful API' || skill.name === 'GitHub' ? 'invert' : ''}
@@ -70,8 +52,8 @@ export default function Skills(): JSX.Element {
               width={skill.name === 'Tailwind' || skill.name === 'Nuxt.js' || skill.name === 'Axios' ? 130 : 80}
               height="80"
               alt={skill.name}
-            />
-            <h3 className="text-xl font-semibold text-[#EAEAEA] mb-2">{skill.name}</h3>
+            /> */}
+            <h3 className="text-xl font-semibold text-[var(--text)] mb-2">{skill.name}</h3>
 
             {/* Optional Progress bar - uncomment if you want visual skill level */}
             {/* 
@@ -86,3 +68,4 @@ export default function Skills(): JSX.Element {
     </motion.div>
   );
 }
+export default Skills;

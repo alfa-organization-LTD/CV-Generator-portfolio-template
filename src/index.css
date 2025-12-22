@@ -1,10 +1,17 @@
 @import "tailwindcss";
-@custom-variant dark (&:where(.dark, .dark *));
+/* @custom-variant dark (&:where(.dark, .dark *)); */
 
 /* define document colors */
 :root {
-  background-color: #000; /* Pure black */
+  --background: #0F0F1A;
   color-scheme: dark;
+  --surface: #1C1C2E;
+  --primary: #6C63FF;
+  --primary-soft: #8E85FF;
+  --accent: #FFB86C;
+  --text: #F8F8F2;
+  --text-muted: #A0A0B0;
+  --border: #2E2E3C;
 }
 
 .reveal {
@@ -31,7 +38,7 @@
 }
 
 /* font already prefetched in index.html */
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap'); */
 body {
   font-family: 'Cairo', sans-serif;
 }
@@ -48,6 +55,7 @@ a {
     -webkit-tap-highlight-color: transparent;
     cursor: pointer;
 }
+
 
 img, h1, h2, h3, p {
     user-drag: none;

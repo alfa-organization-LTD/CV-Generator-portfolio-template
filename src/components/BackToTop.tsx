@@ -32,7 +32,7 @@ const BackToTop: React.FC = () => {
     isVisible && (
       <button
         onClick={scrollToTop}
-        className="fixed bottom-10 right-10 bg-[#FF2E63] hover:bg-[#99050d] text-white px-2 py-1.5 text-3xl rounded-full shadow-lg transition z-50"
+        className="fixed bottom-10 right-10 bg-[var(--primary)] hover:bg-[var(--primary-soft)] text-white px-2 py-1.5 text-3xl rounded-full shadow-lg transition z-50"
       >
         <ChevronUp className="text-white" size={32} />
       </button>
