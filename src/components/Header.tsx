@@ -49,7 +49,7 @@ export default function Header({ logo, logoInverted, contactInfo }: HeaderProps)
             <div className="hidden md:flex gap-4 text-right text-xs text-[var(--text-muted)] leading-tight">
               <span>Email: <a href={`mailto:${contactInfo?.email}`} className="hover:text-[var(--accent)]">{contactInfo?.email}</a></span>
               |
-              <span>Phone: <a href={`tel:${contactInfo?.phone}`} className="hover:text-[var(--accent)]">{contactInfo?.phone}</a></span>
+              <span>Phone: <a href={`tel:${contactInfo?.phone_number}`} className="hover:text-[var(--accent)]">{contactInfo?.phone_number}</a></span>
             </div>
 
             {/* Mobile Menu Button */}
@@ -93,7 +93,7 @@ export default function Header({ logo, logoInverted, contactInfo }: HeaderProps)
                 {/* Contact Info in mobile menu */}
                 <div className="flex flex-col pt-4 border-ta gap-2 aborder-[var(--border)] text-xs">
                   <div>Email: <a href={`mailto:${contactInfo?.email}`} className="hover:text-[var(--accent)]">{contactInfo?.email}</a></div>
-                  <div>Phone: <a href={`tel:${contactInfo?.phone}`} className="hover:text-[var(--accent)]">{contactInfo?.phone}</a></div>
+                  <div>Phone: <a href={`tel:${contactInfo?.phone_number}`} className="hover:text-[var(--accent)]">{contactInfo?.phone_number}</a></div>
                 </div>
               </div>
             </Disclosure.Panel>

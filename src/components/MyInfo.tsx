@@ -50,7 +50,7 @@ const MyInfo = ({ heroImage, myInfo }: MyInfoProps) => {
           {/* CV Button */}
           <div className="mt-5">
             <a
-              href={myInfo?.cvLink}
+              href={myInfo?.cv_link}
               download
             >
               <Button

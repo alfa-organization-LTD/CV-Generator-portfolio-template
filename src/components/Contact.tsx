@@ -81,8 +81,8 @@ const Contact: React.FC<ContactProps> = ({ myContact }) => {
         <div className="flex justify-center items-center gap-1 mt-2">
           <img src="/whatsapp.svg" className="invert w-[1.5rem]" width="100%" height="100%" alt="whatsapp" />
           <span>:</span>
-          <a href={`https://wa.me/${myContact?.phone}`} className="opacity-80 text-lg flex items-center gap-1">
-            <span>{myContact?.phone}</span>
+          <a href={`https://wa.me/${myContact?.phone_number}`} className="opacity-80 text-lg flex items-center gap-1">
+            <span>{myContact?.phone_number}</span>
             <img src="/link.svg" className="invert w-[1.1rem] ml-1" width="100%" height="100%" alt="link" />
           </a>
         </div>

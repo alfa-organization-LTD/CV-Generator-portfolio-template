@@ -21,7 +21,7 @@ export const HeroSchema = z.object({
   hero_image_url: z.string().url(),
   hero_image_cover: z.boolean(),
   bio: z.string(),
-  phone: z.string(),
+  phone_number: z.string(),
   email: z.string().email(),
   cvLink: z.string().url(),
   description: z.string(),

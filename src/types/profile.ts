@@ -18,9 +18,9 @@ export interface Hero {
   hero_image_url: string;
   hero_image_cover: boolean;
   bio: string;
-  phone: string;
+  phone_number: string;
   email: string;
-  cvLink: string;
+  cv_link: string;
   description: string;
 }
 

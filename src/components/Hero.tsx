@@ -59,13 +59,13 @@ const Hero = ({ hero }: HeroProps) => {
               transition={{ duration: 0.6 }}
             >
               <a
-                href={`https://api.whatsapp.com/send?phone=${hero?.phone}&text=I want web service - أريد خدمة البرمجة`}
+                href={`https://api.whatsapp.com/send?phone=${hero?.phone_number}&text=I want web service - أريد خدمة البرمجة`}
                 className="inline-flex items-center gap-2 bg-[var(--primary)]/70 hover:bg-[var(--primary-soft)]/90 text-[var(--text)] px-6 py-3 rounded-lg shadow-md transition"
               >
                 <span>Hire Me</span>
               </a>
               <a
-                href={hero?.cvLink}
+                href={hero?.cv_link}
                 className="inline-flex items-center gap-2 bg-[var(--accent)]/80 hover:bg-[var(--accent)]/80 text-[var(--text)] px-6 py-3 rounded-lg shadow-md transition"
                 download
               >
