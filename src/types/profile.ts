@@ -39,8 +39,8 @@ export interface Education {
   institution: string;
   location: string;
   degree: string;
-  startDate: string;
-  endDate: string | "Present";
+  start_date: string;
+  end_date: string | "Present";
   description: string;
 }
 

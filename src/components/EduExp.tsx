@@ -53,7 +53,7 @@ const EduExp: React.FC<EduExpProps> = ({ myEdu, myExp }) => {
               <div className="flex flex-col md:flex-row items-start md:items-center">
                 <div className="flex items-center space-x-4">
                   <div className="w-2 h-10 bg-[var(--primary)]/60"></div>
-                  <p className="text-lg md:text-xl me-6 text-[var(--text-muted)]">{education[0]?.startDate} – {education[0]?.endDate}</p>
+                  <p className="text-lg md:text-xl me-6 text-[var(--text-muted)]">{education[0]?.start_date} – {education[0]?.end_date}</p>
                 </div>
                 <div className="md:ml-10 mt-4 md:mt-0">
                   <h2 className="text-2xl md:text-3xl font-semibold text-[var(--primary)]/90">
