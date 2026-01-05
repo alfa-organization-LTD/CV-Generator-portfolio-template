@@ -5,6 +5,7 @@ import type { Profile } from "./types/profile";
 import { applyTheme } from "./utils/ThemeProvider";
 import { ProfileSchema } from "./schemas/profile.schema";
 import Loader from "./components/loader";
+import SEO from "./components/SEO";
 import HomePage from "./pages/HomePage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -52,6 +53,7 @@ export default function App() {
   return (
     <Router>
       <ScrollToTop>
+        <SEO portfolio={profileJson} />
         <div className="min-h-screen bg-[var(--bg)] adark">
           <Header 
               logo={profileJson?.logo_url} 
